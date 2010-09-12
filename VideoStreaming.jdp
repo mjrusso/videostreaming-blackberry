@@ -1,0 +1,64 @@
+## RIM Java Development Environment
+# RIM Project file
+#
+# This file is generated and managed by BlackBerry developer tools.
+# It SHOULD NOT BE modified manually.
+#
+AddOn=0
+AlwaysBuild=0
+[AlxImports
+]
+AutoRestart=0
+[BuildOnlyFiles
+]
+[ClassProtection
+]
+[CustomBuildFiles
+]
+[CustomBuildRules
+]
+[DefFiles
+]
+[DependencyFiles
+]
+[DependsOn
+]
+ExcludeFromBuildAll=0
+[Files
+src\com\mjrusso\blackberry\videostreaming\BrowserPlaybackChoice.java
+src\com\mjrusso\blackberry\videostreaming\MMAPIPlaybackChoice.java
+src\com\mjrusso\blackberry\videostreaming\PlaybackChoice.java
+src\com\mjrusso\blackberry\videostreaming\SelectionScreen.java
+src\com\mjrusso\blackberry\videostreaming\StreamingPlayerPlaybackChoice.java
+src\com\mjrusso\blackberry\videostreaming\VideoPlaybackScreen.java
+src\com\mjrusso\blackberry\videostreaming\VideoStreamingApp.java
+src\rimx\media\streaming\BufferOverflowException.java
+src\rimx\media\streaming\CircularByteBuffer.java
+src\rimx\media\streaming\StreamingPlayer.java
+src\rimx\media\streaming\StreamingPlayerListener.java
+]
+HaveAlxImports=0
+HaveDefs=0
+HaveImports=0
+[Icons
+]
+[ImplicitRules
+]
+[Imports
+]
+Listing=0
+NoImport=0
+NoRuntime=0
+Options=-quiet
+OutputFileName=VideoStreaming
+[PackageProtection
+]
+RibbonPosition=0
+RunOnStartup=0
+StartupTier=7
+SystemModule=0
+Title=Video Streaming
+TitleResourceId=1
+Type=0
+Vendor=Michael Russo
+Version=0.1
