@@ -4,7 +4,7 @@ This project demonstrates the available mechanisms for streaming video content t
 
 ## Streaming Options
 
-The following options are supported for streaming media:
+The following streaming options are enabled by this software:
 
 1. _[RTSP]_ BlackBerry Media Player via Browser
 2. _[RTSP]_ Mobile Media API/ JSR-135 (MMAPI)
@@ -18,4 +18,4 @@ Option 5) provides a custom implementation on top of MMAPI (details [here](http:
 
 ## Device Compatibility
 
-Supported media containers, audio and video formats, and streaming options vary based on device type and platform version.  See [Supported Media Types on BlackBerry Smartphones](http://docs.blackberry.com/en/smartphone_users/subcategories/?userType=1&category=Media%20Types%20Supported%20on%20BlackBerry%20Smartphones) for more details.
+Supported media containers, audio and video formats, and streaming options vary based on device type and platform version.  See [Supported Media Types on BlackBerry Smartphones](http://docs.blackberry.com/en/smartphone_users/subcategories/?userType=1&category=Media%20Types%20Supported%20on%20BlackBerry%20Smartphones) for full details.
