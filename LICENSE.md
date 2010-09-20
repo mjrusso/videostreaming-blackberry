@@ -2,9 +2,9 @@
 
 This license applies to all parts of this project that are not externally maintained libraries.  The externally maintained libraries used by this project are:
 
-- Circular Byte Buffer, located at src/rimx/media/streaming/CircularByteBuffer.java.  Circular Byte Buffer is copyrighted by Stephen Ostermiller and has a GPLv2 license.
+- Circular Byte Buffer, located at src/rimx/media/streaming/CircularByteBuffer.java.  Circular Byte Buffer is copyrighted by Stephen Ostermiller and has a GPLv2 license.  The original version can be found [here](http://ostermiller.org/utils/CircularByteBuffer.java.html).
 
-- Streaming Player, located under src/rimx/media/streaming.  Streaming Player is copyrighted by Research In Motion Limited.
+- Streaming Player, located under src/rimx/media/streaming.  Streaming Player is copyrighted by Research In Motion Limited.  The original version can be found [here](http://supportforums.blackberry.com/t5/Java-Development/Streaming-media-Start-to-finish/ta-p/488255).
 
 The remainder of this project is licensed as follows:
 
