@@ -12,17 +12,17 @@ import rimx.media.streaming.StreamingPlayerListener;
 
 public abstract class BaseVideoPlaybackScreen extends FullScreen
 {
-    private BaseVideoPlaybackScreen _screen;
-    private Field _videoField;
+    protected BaseVideoPlaybackScreen _screen;
+    protected Field _videoField;
 
     public BaseVideoPlaybackScreen()
     {
         _screen = this;
     }
 
-    private abstract void stopPlayback();
+    protected abstract void stopPlayback();
 
-    private String appendConnectionString(String url)
+    protected String appendConnectionString(String url)
     {
         if (DeviceInfo.isSimulator()) { }
         else
@@ -33,7 +33,7 @@ public abstract class BaseVideoPlaybackScreen extends FullScreen
         return url;
     }
 
-    private void popScreen()
+    protected void popScreen()
     {
         synchronized(UiApplication.getEventLock()) {
             UiApplication.getUiApplication().popScreen(_screen);
@@ -41,7 +41,7 @@ public abstract class BaseVideoPlaybackScreen extends FullScreen
         stopPlayback();
     }
 
-    private void handleException(final Exception ex)
+    protected void handleException(final Exception ex)
     {
         System.out.println(ex.toString());
         final UiApplication app = UiApplication.getUiApplication();

@@ -27,7 +27,7 @@ public class MMAPIVideoPlaybackScreen extends BaseVideoPlaybackScreen implements
                 try
                 {
                     _player = javax.microedition.media.Manager.createPlayer(urlWithConnectionString);
-                    _player.addPlayerListener(_screen);
+                    _player.addPlayerListener((MMAPIVideoPlaybackScreen)_screen);
                     _player.realize();
 
                     VideoControl control = (VideoControl) _player.getControl("VideoControl");
@@ -67,7 +67,7 @@ public class MMAPIVideoPlaybackScreen extends BaseVideoPlaybackScreen implements
         }.start();
     }
 
-    private void stopPlayback()
+    protected void stopPlayback()
     {
         try {
             if (_player != null) _player.stop();

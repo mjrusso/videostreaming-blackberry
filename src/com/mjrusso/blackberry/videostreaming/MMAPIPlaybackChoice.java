@@ -15,7 +15,7 @@ public class MMAPIPlaybackChoice extends PlaybackChoice
         app.invokeLater(new Runnable() {
             public void run()
             {
-                app.pushScreen(new VideoPlaybackScreen(url, true));
+                app.pushScreen(new MMAPIVideoPlaybackScreen(url));
             }
         });
     }

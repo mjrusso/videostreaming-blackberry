@@ -15,7 +15,7 @@ public class StreamingPlayerPlaybackChoice extends PlaybackChoice
         app.invokeLater(new Runnable() {
             public void run()
             {
-                app.pushScreen(new VideoPlaybackScreen(url, false));
+                app.pushScreen(new StreamingPlayerVideoPlaybackScreen(url));
             }
         });
     }

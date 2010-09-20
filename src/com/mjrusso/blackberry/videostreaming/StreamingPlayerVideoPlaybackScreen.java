@@ -29,7 +29,7 @@ public class StreamingPlayerVideoPlaybackScreen extends BaseVideoPlaybackScreen 
                 try
                 {
                     _player = new StreamingPlayer(urlWithConnectionString, "video/mp4");
-                    _player.addStreamingPlayerListener(_screen);
+                    _player.addStreamingPlayerListener((StreamingPlayerVideoPlaybackScreen) _screen);
                     _player.realize();
 
                     VideoControl control = (VideoControl) _player.getControl("VideoControl");
@@ -69,7 +69,7 @@ public class StreamingPlayerVideoPlaybackScreen extends BaseVideoPlaybackScreen 
         }.start();
     }
 
-    private void stopPlayback()
+    protected void stopPlayback()
     {
         try {
             if (_player != null) _player.stop();
