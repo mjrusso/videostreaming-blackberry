@@ -22,10 +22,8 @@ public class SelectionScreen extends MainScreen implements FieldChangeListener
         setTitle(new LabelField("Video Streaming", LabelField.ELLIPSIS | LabelField.USE_ALL_WIDTH));
         
         PlaybackChoice choices[] = {
-              new BrowserPlaybackChoice("RTSP via Browser")
-            , new MMAPIPlaybackChoice("RTSP via MMAPI")
-            , new BrowserPlaybackChoice("HTTP via Browser")
-            , new MMAPIPlaybackChoice("HTTP via MMAPI")
+              new BrowserPlaybackChoice("HTTP/ RTSP via Browser")
+            , new MMAPIPlaybackChoice("HTTP/ RTSP via MMAPI")
             , new StreamingPlayerPlaybackChoice("HTTP via StreamingPlayer")
         };
         
