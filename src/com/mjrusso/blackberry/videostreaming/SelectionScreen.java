@@ -1,10 +1,5 @@
 package com.mjrusso.blackberry.videostreaming;
 
-import java.io.*;
-import javax.microedition.media.*;
-import javax.microedition.media.control.*;
-import net.rim.blackberry.api.browser.Browser;
-import net.rim.device.api.system.*;
 import net.rim.device.api.ui.*;
 import net.rim.device.api.ui.component.*;
 import net.rim.device.api.ui.container.*;
@@ -22,17 +17,15 @@ public class SelectionScreen extends MainScreen implements FieldChangeListener
         setTitle(new LabelField("Video Streaming", LabelField.ELLIPSIS | LabelField.USE_ALL_WIDTH));
         
         PlaybackChoice choices[] = {
-              new BrowserPlaybackChoice("RTSP via Browser")
-            , new MMAPIPlaybackChoice("RTSP via MMAPI")
-            , new BrowserPlaybackChoice("HTTP via Browser")
-            , new MMAPIPlaybackChoice("HTTP via MMAPI")
+              new BrowserPlaybackChoice("HTTP/ RTSP via Browser")
+            , new MMAPIPlaybackChoice("HTTP/ RTSP via MMAPI")
             , new StreamingPlayerPlaybackChoice("HTTP via StreamingPlayer")
         };
         
         _playbackChoice = new ObjectChoiceField("Playback Type", choices);
         add(_playbackChoice);
 
-        _urlField = new BasicEditField("Playback URL\t\t\t", "http://mjrusso.com/plane/hi-1.mp4", 255, Field.FIELD_RIGHT);
+        _urlField = new BasicEditField("Playback URL\n", "http://mjrusso.com/bb/bb.mp4", 255, Field.FIELD_RIGHT);
         _urlField.setChangeListener(this);
         add(_urlField);
         

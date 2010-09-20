@@ -3,7 +3,6 @@ package com.mjrusso.blackberry.videostreaming;
 import java.io.*;
 import javax.microedition.media.*;
 import javax.microedition.media.control.*;
-import net.rim.blackberry.api.browser.Browser;
 import net.rim.device.api.system.*;
 import net.rim.device.api.ui.*;
 import net.rim.device.api.ui.component.*;
@@ -111,6 +110,13 @@ public class VideoPlaybackScreen extends FullScreen implements PlayerListener, S
         return url;
     }
     
+    private void popScreen()
+    {
+        synchronized(UiApplication.getEventLock()) {
+            UiApplication.getUiApplication().popScreen(_screen); 
+        }
+    }
+    
     private void handleException(final Exception ex)
     {
         System.out.println(ex.toString());
@@ -127,9 +133,7 @@ public class VideoPlaybackScreen extends FullScreen implements PlayerListener, S
     protected boolean keyChar(char key, int status, int time) {
         switch (key) {
             case Characters.ESCAPE:
-                synchronized(UiApplication.getEventLock()) {
-                    UiApplication.getUiApplication().popScreen(_screen); 
-                }
+                popScreen();
                 return true;
         }
         return false;
@@ -149,12 +153,14 @@ public class VideoPlaybackScreen extends FullScreen implements PlayerListener, S
         }    
         else if (event.equals(STOPPED))
         {
-            System.out.println("Player Stopped");        
+            System.out.println("Player Stopped");
+            popScreen();  
         }                       
     
         else if (event.equals(END_OF_MEDIA))
         {
-            System.out.println("Player End of Media");        
+            System.out.println("Player End of Media");
+            popScreen();      
         }
     }
     
