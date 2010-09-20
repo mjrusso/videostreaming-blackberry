@@ -8,7 +8,7 @@ public class BrowserPlaybackChoice extends PlaybackChoice
     {
         super(label);
     }
-    
+
     public void play(String url)
     {
         Browser.getDefaultSession().displayPage(url);

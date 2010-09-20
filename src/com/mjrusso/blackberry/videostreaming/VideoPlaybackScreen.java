@@ -14,14 +14,14 @@ public class VideoPlaybackScreen extends FullScreen implements PlayerListener, S
 {
     private VideoPlaybackScreen _screen;
     private Field _videoField;
-    
+
     public VideoPlaybackScreen(String url, final boolean useDirectMMAPI)
     {
         _screen = this;
         final String urlWithConnectionString = appendConnectionString(url);
-        
+
         System.out.println("initializing player with URL " + urlWithConnectionString);
-        
+
         new Thread()
         {
             public void run()
@@ -33,13 +33,13 @@ public class VideoPlaybackScreen extends FullScreen implements PlayerListener, S
                         Player player = javax.microedition.media.Manager.createPlayer(urlWithConnectionString);
                         player.addPlayerListener(_screen); 
                         player.realize();
-                        
+
                         VideoControl control = (VideoControl) player.getControl("VideoControl");
                         _videoField = (Field) control.initDisplayMode(
                             VideoControl.USE_GUI_PRIMITIVE, "net.rim.device.api.ui.Field"
                         );
                         control.setDisplaySize(Display.getWidth(), Display.getHeight());
-                        
+
                         player.prefetch();
                         UiApplication.getUiApplication().invokeLater(new Runnable()
                         {
@@ -62,7 +62,7 @@ public class VideoPlaybackScreen extends FullScreen implements PlayerListener, S
                             VideoControl.USE_GUI_PRIMITIVE, "net.rim.device.api.ui.Field"
                         );
                         control.setDisplaySize(Display.getWidth(), Display.getHeight());
-                        
+
                         player.prefetch();
                         UiApplication.getUiApplication().invokeLater(new Runnable()
                         {
@@ -74,34 +74,31 @@ public class VideoPlaybackScreen extends FullScreen implements PlayerListener, S
                         control.setVisible(true);
                         player.start();
                     }
-                    
+
                 }
                 catch (IllegalStateException ex)
                 {
                     handleException(ex);
-                }  
+                }
                 catch (IllegalArgumentException ex)
                 {
                     handleException(ex);
-                }   
+                }
                 catch (IOException ex)
                 {
                     handleException(ex);
-                }   
+                }
                 catch(MediaException ex)
                 {
                     handleException(ex);
                 }
             }
-        }.start(); 
+        }.start();
     }
-    
+
     private String appendConnectionString(String url)
     {
-        if (DeviceInfo.isSimulator())
-        {
-            //url = url.concat(";deviceside=true");
-        }
+        if (DeviceInfo.isSimulator()) { }
         else
         {
             // TODO: we currently only support WiFi connections
@@ -109,14 +106,14 @@ public class VideoPlaybackScreen extends FullScreen implements PlayerListener, S
         }
         return url;
     }
-    
+
     private void popScreen()
     {
         synchronized(UiApplication.getEventLock()) {
-            UiApplication.getUiApplication().popScreen(_screen); 
+            UiApplication.getUiApplication().popScreen(_screen);
         }
     }
-    
+
     private void handleException(final Exception ex)
     {
         System.out.println(ex.toString());
@@ -129,7 +126,7 @@ public class VideoPlaybackScreen extends FullScreen implements PlayerListener, S
             }
         });
     }
-    
+
     protected boolean keyChar(char key, int status, int time) {
         switch (key) {
             case Characters.ESCAPE:
@@ -138,7 +135,7 @@ public class VideoPlaybackScreen extends FullScreen implements PlayerListener, S
         }
         return false;
     }
-    
+
     /** PlayerListener Implementation */
     public void playerUpdate(Player player, final String event, Object eventData)
     {
@@ -154,25 +151,25 @@ public class VideoPlaybackScreen extends FullScreen implements PlayerListener, S
         else if (event.equals(STOPPED))
         {
             System.out.println("Player Stopped");
-            popScreen();  
-        }                       
+            popScreen();
+        }
     
         else if (event.equals(END_OF_MEDIA))
         {
             System.out.println("Player End of Media");
-            popScreen();      
+            popScreen();
         }
     }
-    
+
     /** StreamingPlayerListener Implementation */
     public void bufferStatusChanged(long bufferStartsAt, long len)
     {
     }
 
     public void downloadStatusUpdated(final long totalDownloaded)
-    {                                                                   
+    {
     }
-    
+
     public void feedPaused(final long available)
     {
     }
@@ -191,21 +188,21 @@ public class VideoPlaybackScreen extends FullScreen implements PlayerListener, S
 
     public byte[] preprocessData(byte[] bytes, int off, int len)
     {  
-        return null;            
+        return null;
     }
     
     public void nowReading(long now)
     {
     }
-      
+
     public void nowPlaying(long now)
     {
     }
-      
+
     public void contentLengthUpdated(long contentLength)
     {
-    }       
-       
+    }
+
     public void streamingError(final int code)
     {
         switch(code)
@@ -226,8 +223,7 @@ public class VideoPlaybackScreen extends FullScreen implements PlayerListener, S
                 System.out.println("Player Error: ERROR_PLAYING_MEDIA");
                 handleException(new Exception("Player Error: ERROR_PLAYING_MEDIA"));
                 break;
-        } 
-        
+        }
+
     }
-              
 }

@@ -8,7 +8,7 @@ public class StreamingPlayerPlaybackChoice extends PlaybackChoice
     {
         super(label);
     }
-    
+
     public void play(final String url)
     {
         final UiApplication app = UiApplication.getUiApplication();
@@ -19,5 +19,5 @@ public class StreamingPlayerPlaybackChoice extends PlaybackChoice
             }
         });
     }
-   
+
 }

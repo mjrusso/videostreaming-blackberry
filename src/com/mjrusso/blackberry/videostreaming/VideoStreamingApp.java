@@ -9,11 +9,9 @@ public class VideoStreamingApp extends UiApplication
         VideoStreamingApp theApp = new VideoStreamingApp();
         theApp.enterEventDispatcher();
     }
-    
+
     public VideoStreamingApp()
     {
         pushScreen(new SelectionScreen());
     }
 }
-
-
