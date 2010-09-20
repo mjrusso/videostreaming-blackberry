@@ -32,7 +32,7 @@ public class SelectionScreen extends MainScreen implements FieldChangeListener
         _playbackChoice = new ObjectChoiceField("Playback Type", choices);
         add(_playbackChoice);
 
-        _urlField = new BasicEditField("Playback URL\t\t\t", "http://mjrusso.com/plane/hi-1.mp4", 255, Field.FIELD_RIGHT);
+        _urlField = new BasicEditField("Playback URL\n", "http://mjrusso.com/bb/bb.mp4", 255, Field.FIELD_RIGHT);
         _urlField.setChangeListener(this);
         add(_urlField);
         
