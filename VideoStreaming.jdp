@@ -25,12 +25,14 @@ AutoRestart=0
 ]
 ExcludeFromBuildAll=0
 [Files
+src\com\mjrusso\blackberry\videostreaming\BaseVideoPlaybackScreen.java
 src\com\mjrusso\blackberry\videostreaming\BrowserPlaybackChoice.java
 src\com\mjrusso\blackberry\videostreaming\MMAPIPlaybackChoice.java
+src\com\mjrusso\blackberry\videostreaming\MMAPIVideoPlaybackScreen.java
 src\com\mjrusso\blackberry\videostreaming\PlaybackChoice.java
 src\com\mjrusso\blackberry\videostreaming\SelectionScreen.java
 src\com\mjrusso\blackberry\videostreaming\StreamingPlayerPlaybackChoice.java
-src\com\mjrusso\blackberry\videostreaming\VideoPlaybackScreen.java
+src\com\mjrusso\blackberry\videostreaming\StreamingPlayerVideoPlaybackScreen.java
 src\com\mjrusso\blackberry\videostreaming\VideoStreamingApp.java
 src\rimx\media\streaming\BufferOverflowException.java
 src\rimx\media\streaming\CircularByteBuffer.java
