@@ -41,14 +41,14 @@ public abstract class BaseVideoPlaybackScreen extends FullScreen
         stopPlayback();
     }
 
-    protected void handleException(final Exception ex)
+    protected void handleException(final Exception ex, final boolean popScreen)
     {
         System.out.println(ex.toString());
         final UiApplication app = UiApplication.getUiApplication();
         app.invokeLater(new Runnable() {
             public void run()
             {
-                app.popScreen(_screen);
+                if (popScreen) app.popScreen(_screen);
                 Dialog.alert(ex.toString());
             }
         });

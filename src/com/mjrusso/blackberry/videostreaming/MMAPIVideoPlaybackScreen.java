@@ -49,19 +49,19 @@ public class MMAPIVideoPlaybackScreen extends BaseVideoPlaybackScreen implements
                 }
                 catch (IllegalStateException ex)
                 {
-                    handleException(ex);
+                    handleException(ex, true);
                 }
                 catch (IllegalArgumentException ex)
                 {
-                    handleException(ex);
+                    handleException(ex, true);
                 }
                 catch (IOException ex)
                 {
-                    handleException(ex);
+                    handleException(ex, true);
                 }
                 catch(MediaException ex)
                 {
-                    handleException(ex);
+                    handleException(ex, true);
                 }
             }
         }.start();
@@ -84,7 +84,7 @@ public class MMAPIVideoPlaybackScreen extends BaseVideoPlaybackScreen implements
         if (event.equals(PlayerListener.ERROR))
         {
             System.out.println("Player Error: " + eventData);
-            handleException(new Exception("Player Error: " + eventData));
+            handleException(new Exception("Player Error: " + eventData), false);
         }
         else if (event.equals(STARTED))
         {

@@ -51,19 +51,19 @@ public class StreamingPlayerVideoPlaybackScreen extends BaseVideoPlaybackScreen 
                 }
                 catch (IllegalStateException ex)
                 {
-                    handleException(ex);
+                    handleException(ex, true);
                 }
                 catch (IllegalArgumentException ex)
                 {
-                    handleException(ex);
+                    handleException(ex, true);
                 }
                 catch (IOException ex)
                 {
-                    handleException(ex);
+                    handleException(ex, true);
                 }
                 catch(MediaException ex)
                 {
-                    handleException(ex);
+                    handleException(ex, true);
                 }
             }
         }.start();
@@ -126,19 +126,19 @@ public class StreamingPlayerVideoPlaybackScreen extends BaseVideoPlaybackScreen 
         {
             case StreamingPlayerListener.ERROR_DOWNLOADING:
                 System.out.println("Player Error: ERROR_DOWNLOADING");
-                handleException(new Exception("Player Error: ERROR_DOWNLOADING"));
+                handleException(new Exception("Player Error: ERROR_DOWNLOADING"), false);
                 break;
             case StreamingPlayerListener.ERROR_SEEKING:
                 System.out.println("Player Error: ERROR_SEEKING");
-                handleException(new Exception("Player Error: ERROR_SEEKING"));
+                handleException(new Exception("Player Error: ERROR_SEEKING"), false);
                 break;
             case StreamingPlayerListener.ERROR_OPENING_CONNECTION:
                 System.out.println("Player Error: ERROR_OPENING_CONNECTION");
-                handleException(new Exception("Player Error: ERROR_OPENING_CONNECTION"));
+                handleException(new Exception("Player Error: ERROR_OPENING_CONNECTION"), false);
                 break;
             case StreamingPlayerListener.ERROR_PLAYING_MEDIA:
                 System.out.println("Player Error: ERROR_PLAYING_MEDIA");
-                handleException(new Exception("Player Error: ERROR_PLAYING_MEDIA"));
+                handleException(new Exception("Player Error: ERROR_PLAYING_MEDIA"), false);
                 break;
         }
 
