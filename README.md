@@ -46,7 +46,10 @@ To compile, select _Build All_ from the JDE's _Build_ menu.
 
 To run in the simulator, select _Build All and Run_ from the _Build_ menu.  To install on device, use the `javaloader` tool or serve the generated `.jad` and `.cod` files from a web server for OTA installation.
 
-
 ### Caveats
 
 This project currently only supports WiFi for on-device streaming via MMAPI and StreamingPlayer.  Support for additional transports can be added by modifying the `appendConnectionString` method of `BaseVideoPlaybackScreen`.  The [Network Diagnostic Tool KB Article](http://www.blackberry.com/knowledgecenterpublic/livelink.exe/fetch/2000/348583/800451/800563/What_Is_-_Network_Diagnostic_Tool.html?nodeid=1450596&vernum=0) and [associated sample code](http://www.blackberry.com/knowledgecentersupport/kmsupport/developerknowledgebase/zip/NetworkDiagnosticPublic.zip) provide a good starting point for integrating multiple transport types into your application.  (Regardless, WiFi is **highly** recommended for multimedia streaming.)
+
+## Screenshots
+
+![screenshots](http://github.com/mjrusso/videostreaming-bb/raw/master/assets/screenshots.png)
