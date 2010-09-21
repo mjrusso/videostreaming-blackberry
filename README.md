@@ -52,4 +52,4 @@ This project currently only supports WiFi for on-device streaming via MMAPI and 
 
 ## Screenshots
 
-![screenshots](http://github.com/mjrusso/videostreaming-bb/raw/master/assets/screenshots.png)
+![screenshots](http://github.com/mjrusso/videostreaming-blackberry/raw/master/assets/screenshots.png)
